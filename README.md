@@ -1,2 +1,3 @@
 # sui_voting_dapp
-Sui voting system dApp learning project  
+
+Hands-on Sui dApp development with Move and React. Create a voting system app. Learn smart contracts coding. 
