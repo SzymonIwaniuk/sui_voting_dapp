@@ -10,7 +10,7 @@ use std::string::String;
 // ability force us to provide id
 // UID is gonna also be stored on a blockchain
 
-public struct Proporsal has key {
+public struct Proposal has key {
 	id: UID,
 	title: String,
 	description: String,
@@ -28,8 +28,8 @@ public fun create_proposal(
 	expiration: u64,
 	ctx: &mut TxContext
 ) {
-	let proposal = Proposal {
-		id: object::new(ctx: ctx),
+	let proposal: Proposal = Proposal {
+		id: object::new(ctx),
 		title,
 		description,
 		voted_yes_count: 0,
@@ -39,5 +39,5 @@ public fun create_proposal(
 		voter_registry: vector[]
 	};
 
-	transfer::share_object(obj: proposal);
+	sui::transfer::share_object(proposal);
 }
