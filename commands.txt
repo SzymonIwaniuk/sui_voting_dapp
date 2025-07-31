@@ -1,0 +1,22 @@
+
+// suiscan.xyz
+// call to blockchain
+
+sui client call \
+  --package 0x28b0b1ed929897a524c25231aeae4fb3c38a1bd218222a87bcf5659655296db0 \
+  --module dashboard \
+  --function create_proposal \
+  --args "Proposal 1" "Proposal description 1" 1768564857 \
+  --gas-budget 100000000
+
+
+// call multiple functions to blockchain
+
+sui client ptb \
+  --move-call 0x28b0b1ed929897a524c25231aeae4fb3c38a1bd218222a87bcf5659655296db0::dashboard::create_proposal \
+  '"Proposal 2"' \
+  '"Proposal description 2"' \
+  1768564857 
+
+
+// 1768564857 -> unix timestamp
